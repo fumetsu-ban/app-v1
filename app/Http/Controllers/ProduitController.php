@@ -64,10 +64,13 @@ class ProduitController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
-    }
+
+       $produit= Produit::find($id);
+       $titre= "consultation du  ".$produit->libelle;
+    return view("produit.show",compact('produit','titre'));
+}
 
     /**
      * Show the form for editing the specified resource.
